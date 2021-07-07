@@ -6,9 +6,6 @@ import pandas as pd
 import xlsxwriter
 import logging
 
-#Solo tocar esto:
-path = r"C:\Users\janic\OneDrive\Documentos\Meli\dat.xlsx"
-
 class URLAlreadyOnExcel(Exception):
     def __init__(self, message):
         self.__message = message
@@ -77,6 +74,8 @@ def get_row_from_page(soup, url):
         my_row.append(skills[1])
     return my_row
 
+
+path = input("Ingresa el path donde está el excel: ").strip()
 while(1):
     url = input("Ingresa el url: ").strip()
     if url == "exit":
